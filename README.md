@@ -130,6 +130,23 @@ const HappyComponent = () => {
 }
 ```
 
+## Mitigate debugging by using string constants
+
+If you want to make sure all paths in your app are constant and truthful because you are a psyco that wants to ensure 100% you are not messing that up, you can just assign the paths you are using to some constants.
+
+```js
+export const SESSION_PATH = 'auth/session'
+export const USER_INFO_PATH = 'auth/user'
+```
+
+```js
+import { SESSION_PATH } from './paths'
+//.
+//.
+//.
+state.remove(SESSION_PATH)
+```
+
 ## Typescript
 
 This library is developed in TypeScript and shipped fully typed.
@@ -144,4 +161,7 @@ The development of this library in the open on GitHub, and we are grateful to th
 ### License
 
 [MIT licensed](./LICENSE).
+
+```
+
 ```
