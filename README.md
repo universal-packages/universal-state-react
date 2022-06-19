@@ -1,10 +1,10 @@
 # State React
 
 [![npm version](https://badge.fury.io/js/@universal-packages%2Fstate-react.svg)](https://www.npmjs.com/package/@universal-packages/state-react)
-[![Testing](https://github.com/Universal-Packages/universal-state-react/actions/workflows/testing.yml/badge.svg)](https://github.com/Universal-Packages/universal-state-react/actions/workflows/testing.yml)
-[![codecov](https://codecov.io/gh/Universal-Packages/universal-state-react/branch/main/graph/badge.svg?token=CXPJSN8IGL)](https://codecov.io/gh/Universal-Packages/universal-state-react)
+[![Testing](https://github.com/universal-packages/universal-state-react/actions/workflows/testing.yml/badge.svg)](https://github.com/universal-packages/universal-state-react/actions/workflows/testing.yml)
+[![codecov](https://codecov.io/gh/universal-packages/universal-state-react/branch/main/graph/badge.svg?token=CXPJSN8IGL)](https://codecov.io/gh/universal-packages/universal-state-react)
 
-React bindings for [Universal State](https://github.com/Universal-Packages/universal-state), as an alternative for simple context state and other state management libraries.
+React bindings for [Universal State](https://github.com/universal-packages/universal-state), as an alternative for simple context state and other state management libraries.
 
 ## Trade offs
 
