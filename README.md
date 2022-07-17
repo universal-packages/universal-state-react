@@ -86,34 +86,15 @@ const HappyComponent = () => {
 }
 ```
 
-## usePathSelector()
-
-Observes state changes for a privided path and returns the value there.
-
-```js
-import { usePathSelector } from '@universal-packages/state-react'
-
-const HappyComponent = () => {
-  const value = usePathSelector('value/in/state')
-
-  return (
-    <div>
-      <h1>Test Component</h1>
-      <p>State value: {value}</p>
-    </div>
-  )
-}
-```
-
 ## useSelector()
 
-Observes state changes for a privided selector and returns the value there.
+Observes state changes for a privided path and returns the value there.
 
 ```js
 import { useSelector } from '@universal-packages/state-react'
 
 const HappyComponent = () => {
-  const valueS = useSelector((state) => state.value.in.state)
+  const value = useSelector('value/in/state')
 
   return (
     <div>
@@ -124,6 +105,24 @@ const HappyComponent = () => {
 }
 ```
 
+## useFunctionSelector()
+
+Observes state changes for a privided selector and returns the value there.
+
+```js
+import { useFunctionSelector } from '@universal-packages/state-react'
+
+const HappyComponent = () => {
+  const valueS = useFunctionSelector((state) => state.value.in.state)
+
+  return (
+    <div>
+      <h1>Test Component</h1>
+      <p>State value: {value}</p>
+    </div>
+  )
+}
+```
 
 ## useMutate()
 

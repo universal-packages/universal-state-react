@@ -1,22 +1,23 @@
 import React from 'react'
+import State from '@universal-packages/state'
 import { useUniversalState } from './useUniversalState'
 
-export function useSelector<S = any, V = any>(selector: (state: S) => V): V {
+export function useSelector<V = any>(path: string | string[]): V {
   const state = useUniversalState()
-  const [value, setValue] = React.useState<V>(selector(state.get()))
+  const [value, setValue] = React.useState<V>(state.get(path))
 
   React.useEffect((): (() => void) => {
-    const setNewValue = (state: S): void => {
-      const newValue = selector(state)
+    const finalPath = State.getPath(path)
+    const setNewValue = (newValue: V): void => {
       setValue(newValue)
     }
 
-    state.on('*', setNewValue)
+    state.on(finalPath, setNewValue)
 
     return (): void => {
-      state.removeListener('*', setNewValue)
+      state.removeListener(finalPath, setNewValue)
     }
-  }, [selector])
+  }, [path])
 
   return value
 }
