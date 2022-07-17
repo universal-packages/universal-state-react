@@ -1,11 +1,12 @@
 import { ToolSet } from '@universal-packages/state'
 import React from 'react'
-import { UniversalStateProvieder, useMutate, useStateChanged, useUniversalState } from '../src'
+import { UniversalStateProvieder, useMutate, usePathSelector, useSelector, useUniversalState } from '../src'
 
 function TestDisplay(): React.ReactElement {
   const state = useUniversalState()
   const mutate = useMutate()
-  const value = useStateChanged('value/in/state')
+  const valueP = usePathSelector('value/in/state')
+  const valueS = useSelector((state) => state.value?.in?.state)
 
   const handleClick = (): void => {
     state.set('/value/in/state', 'this is a value')
@@ -20,7 +21,8 @@ function TestDisplay(): React.ReactElement {
   return (
     <div>
       <h1>Test Component</h1>
-      <p>State value: {value}</p>
+      <p>State value by path selector: {valueP}</p>
+      <p>State value by selector: {valueS}</p>
       <button onClick={handleClick}>Click me</button>
       <button onClick={handleClick2}>Test mutate</button>
     </div>
@@ -29,7 +31,7 @@ function TestDisplay(): React.ReactElement {
 
 export default function TestApp(): React.ReactElement {
   return (
-    <UniversalStateProvieder>
+    <UniversalStateProvieder initialState={{ value: { in: { state: 'initial' } } }}>
       <TestDisplay></TestDisplay>
     </UniversalStateProvieder>
   )

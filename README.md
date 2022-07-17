@@ -86,15 +86,15 @@ const HappyComponent = () => {
 }
 ```
 
-## useStateChanged()
+## usePathSelector()
 
 Observes state changes for a privided path and returns the value there.
 
 ```js
-import { useStateChanged } from '@universal-packages/state-react'
+import { usePathSelector } from '@universal-packages/state-react'
 
 const HappyComponent = () => {
-  const value = useStateChanged('value/in/state')
+  const value = usePathSelector('value/in/state')
 
   return (
     <div>
@@ -104,6 +104,26 @@ const HappyComponent = () => {
   )
 }
 ```
+
+## useSelector()
+
+Observes state changes for a privided selector and returns the value there.
+
+```js
+import { useSelector } from '@universal-packages/state-react'
+
+const HappyComponent = () => {
+  const valueS = useSelector((state) => state.value.in.state)
+
+  return (
+    <div>
+      <h1>Test Component</h1>
+      <p>State value: {value}</p>
+    </div>
+  )
+}
+```
+
 
 ## useMutate()
 
