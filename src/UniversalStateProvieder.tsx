@@ -1,4 +1,4 @@
-import State from '@universal-packages/state'
+import { State } from '@universal-packages/state'
 import React from 'react'
 
 import context from './context'

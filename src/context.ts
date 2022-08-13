@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import State from '@universal-packages/state'
+import { State } from '@universal-packages/state'
 
 const universalStateContext = createContext<State>(null)
 

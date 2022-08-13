@@ -1,5 +1,5 @@
 import React from 'react'
-import State from '@universal-packages/state'
+import { State } from '@universal-packages/state'
 import { useUniversalState } from './useUniversalState'
 
 export function useSelector<V = any>(path: string | string[]): V {

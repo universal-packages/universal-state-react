@@ -37,7 +37,7 @@ You can pass your own state object imported from somewhere else probably already
 
 ```js
 import { UniversalStateProvieder } from '@universal-packages/state-react'
-import State from '@universal-packages/state'
+import { State } from '@universal-packages/state'
 
 const state = new State({ initialized: false })
 
