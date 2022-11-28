@@ -1,10 +1,10 @@
 import { ToolSet } from '@universal-packages/state'
 import { useUniversalState } from './useUniversalState'
 
-export function useMutate(): (mutatator: (toolset: ToolSet) => void) => void {
+export function useMutate(): (mutator: (toolSet: ToolSet) => void) => void {
   const state = useUniversalState()
 
-  return (mutator: (toolset: ToolSet) => void): void => {
+  return (mutator: (toolSet: ToolSet) => void): void => {
     state.mutate(mutator)
   }
 }

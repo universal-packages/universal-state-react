@@ -1,6 +1,6 @@
 import { ToolSet } from '@universal-packages/state'
 import React from 'react'
-import { UniversalStateProvieder, useMutate, useFunctionSelector, useSelector, useUniversalState } from '../src'
+import { UniversalStateProvider, useMutate, useFunctionSelector, useSelector, useUniversalState } from '../src'
 
 function TestDisplay(): React.ReactElement {
   const state = useUniversalState()
@@ -13,8 +13,8 @@ function TestDisplay(): React.ReactElement {
   }
 
   const handleClick2 = (): void => {
-    mutate((toolset: ToolSet): void => {
-      toolset.set('value/in/state', 'using useMutate')
+    mutate((toolSet: ToolSet): void => {
+      toolSet.set('value/in/state', 'using useMutate')
     })
   }
 
@@ -31,8 +31,8 @@ function TestDisplay(): React.ReactElement {
 
 export default function TestApp(): React.ReactElement {
   return (
-    <UniversalStateProvieder initialState={{ value: { in: { state: 'initial' } } }}>
+    <UniversalStateProvider initialState={{ value: { in: { state: 'initial' } } }}>
       <TestDisplay></TestDisplay>
-    </UniversalStateProvieder>
+    </UniversalStateProvider>
   )
 }

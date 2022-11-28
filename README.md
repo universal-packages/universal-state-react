@@ -8,7 +8,7 @@ React bindings for [Universal State](https://github.com/universal-packages/unive
 
 ## Trade offs
 
-As you may notice this alternative lacks some of what other libraries consider fundamentals like action naming or atomization of state transformations, instead with universal state you still treat your state as a centralized source of truth but with the simplification that you mutate and observe changes in it by using string paths. This dynamicity requires you to be sure always what paths are you using, there is a seccion here to mitigate the debugging difficulty that this brings.
+As you may notice this alternative lacks some of what other libraries consider fundamentals like action naming or atomization of state transformations, instead with universal state you still treat your state as a centralized source of truth but with the simplification that you mutate and observe changes in it by using string paths. This dynamism requires you to be sure always what paths are you using, there is a section here to mitigate the debugging difficulty that this brings.
 
 ## Install
 
@@ -23,44 +23,44 @@ npm install @universal-packages/state-react
 Make sure you wrap your application with the `UniversalStateProvider` so the state object is available for all components in the tree.
 
 ```js
-import { UniversalStateProvieder } from '@universal-packages/state-react'
+import { UniversalStateProvider } from '@universal-packages/state-react'
 
 const App = () => {
 
-  return <UniversalStateProvieder>
+  return <UniversalStateProvider>
     /** Some other components */
-  <UniversalStateProvieder>
+  <UniversalStateProvider>
 }
 ```
 
 You can pass your own state object imported from somewhere else probably already populated with some data.
 
 ```js
-import { UniversalStateProvieder } from '@universal-packages/state-react'
+import { UniversalStateProvider } from '@universal-packages/state-react'
 import { State } from '@universal-packages/state'
 
 const state = new State({ initialized: false })
 
 const App = () => {
 
-  return <UniversalStateProvieder state={state}>
+  return <UniversalStateProvider state={state}>
     /** Some other components */
-  <UniversalStateProvieder>
+  <UniversalStateProvider>
 }
 ```
 
 Or pass some initial state directly to the provider.
 
 ```js
-import { UniversalStateProvieder } from '@universal-packages/state-react'
+import { UniversalStateProvider } from '@universal-packages/state-react'
 
 const initialState = { initialized: false }
 
 const App = () => {
 
-  return <UniversalStateProvieder initialState={initialState}>
+  return <UniversalStateProvider initialState={initialState}>
     /** Some other components */
-  <UniversalStateProvieder>
+  <UniversalStateProvider>
 }
 ```
 
@@ -88,7 +88,7 @@ const HappyComponent = () => {
 
 ## useSelector()
 
-Observes state changes for a privided path and returns the value there.
+Observes state changes for a provided path and returns the value there.
 
 ```js
 import { useSelector } from '@universal-packages/state-react'
@@ -107,7 +107,7 @@ const HappyComponent = () => {
 
 ## useFunctionSelector()
 
-Observes state changes for a privided selector and returns the value there.
+Observes state changes for a provided selector and returns the value there.
 
 ```js
 import { useFunctionSelector } from '@universal-packages/state-react'
@@ -126,7 +126,7 @@ const HappyComponent = () => {
 
 ## useMutate()
 
-Givies a direct access to the state `mutate` function.
+Gives a direct access to the state `mutate` function.
 
 ```js
 import { useMutate } from '@universal-packages/state-react'
@@ -135,9 +135,9 @@ const HappyComponent = () => {
   const mutate = useMutate()
 
   const handleClick = (): void => {
-    mutate((toolset) => {
-      toolset.remove('session)
-      toolset.set('initialized', false)
+    mutate((toolSet) => {
+      toolSet.remove('session)
+      toolSet.set('initialized', false)
     })
   }
 
@@ -151,7 +151,7 @@ const HappyComponent = () => {
 
 ## Mitigate debugging by using string constants
 
-If you want to make sure all paths in your app are constant and truthful because you are a psyco that wants to ensure 100% you are not messing that up, you can just assign the paths you are using to some constants.
+If you want to make sure all paths in your app are constant and truthful because you want to ensure 100% you are not messing that up, you can just assign the paths you are using to some constants.
 
 ```js
 export const SESSION_PATH = 'auth/session'
@@ -172,7 +172,7 @@ This library is developed in TypeScript and shipped fully typed.
 
 ## Contributing
 
-The development of this library in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving this library.
+The development of this library happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving this library.
 
 - [Code of Conduct](./CODE_OF_CONDUCT.md)
 - [Contributing Guide](./CONTRIBUTING.md)

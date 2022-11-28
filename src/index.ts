@@ -1,5 +1,5 @@
-export { default as UniversalStateProvieder } from './UniversalStateProvieder'
-export { UniversalStateProviderProps } from './UniversalStateProvieder'
+export { default as UniversalStateProvider } from './UniversalStateProvider'
+export { UniversalStateProviderProps } from './UniversalStateProvider'
 export { useFunctionSelector } from './useFunctionSelector'
 export { useMutate } from './useMutate'
 export { useSelector } from './useSelector'
