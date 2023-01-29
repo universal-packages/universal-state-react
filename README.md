@@ -6,10 +6,6 @@
 
 React bindings for [Universal State](https://github.com/universal-packages/universal-state), as an alternative for simple context state and other state management libraries.
 
-## Trade offs
-
-As you may notice this alternative lacks some of what other libraries consider fundamentals like action naming or atomization of state transformations, instead with universal state you still treat your state as a centralized source of truth but with the simplification that you mutate and observe changes in it by using string paths. This dynamism requires you to be sure always what paths are you using, there is a section here to mitigate the debugging difficulty that this brings.
-
 ## Install
 
 ```shell
@@ -64,7 +60,8 @@ const App = () => {
 }
 ```
 
-## useUniversalState()
+## Hooks
+#### **`useUniversalState()`**
 
 Gets the context provided instance of of universal state.
 
@@ -86,7 +83,7 @@ const HappyComponent = () => {
 }
 ```
 
-## useSelector()
+#### **`useSelector(path: String)`**
 
 Observes state changes for a provided path and returns the value there.
 
@@ -105,7 +102,7 @@ const HappyComponent = () => {
 }
 ```
 
-## useFunctionSelector()
+#### **`useFunctionSelector(selector: Function)`**
 
 Observes state changes for a provided selector and returns the value there.
 
@@ -124,7 +121,7 @@ const HappyComponent = () => {
 }
 ```
 
-## useMutate()
+#### **`useMutate(mutator: Function)`**
 
 Gives a direct access to the state `mutate` function.
 
