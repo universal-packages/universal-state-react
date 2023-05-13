@@ -16,5 +16,7 @@ type ConditionalProps =
 export type UniversalStateProviderProps = React.PropsWithChildren & ConditionalProps
 
 export default function UniversalStateProvider(props: UniversalStateProviderProps): React.ReactElement {
-  return <context.Provider value={props.state || new State(props.initialState)}>{props.children}</context.Provider>
+  const state = React.useMemo(() => props.state || new State(props.initialState), [props.state, props.initialState])
+
+  return <context.Provider value={state}>{props.children}</context.Provider>
 }
