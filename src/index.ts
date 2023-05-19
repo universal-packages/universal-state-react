@@ -1,6 +1,7 @@
 export { default as UniversalStateProvider } from './UniversalStateProvider'
 export { UniversalStateProviderProps } from './UniversalStateProvider'
 export { useFunctionSelector } from './useFunctionSelector'
+export { useGuarantySelector } from './useGuarantySelector'
 export { useMutate } from './useMutate'
 export { useSelector } from './useSelector'
 export { useUniversalState } from './useUniversalState'

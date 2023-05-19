@@ -61,6 +61,7 @@ const App = () => {
 ```
 
 ## Hooks
+
 #### **`useUniversalState()`**
 
 Gets the context provided instance of of universal state.
@@ -116,6 +117,25 @@ const HappyComponent = () => {
     <div>
       <h1>Test Component</h1>
       <p>State value: {value}</p>
+    </div>
+  )
+}
+```
+
+#### **`useGuarantySelector(path: String)`**
+
+Observes state changes for a provided path, normally react will not re-render if the value is the same, for example if something changed deeper, the container object will be the same so react will not re-render, this hook guarantees that the component will re-render if the value changes.
+
+```js
+import { useGuarantySelector } from '@universal-packages/state-react'
+
+const HappyComponent = () => {
+  const container = useGuarantySelector('container/in/state')
+
+  return (
+    <div>
+      <h1>Test Component</h1>
+      <p>State container: {JSON.stringify(container)}</p>
     </div>
   )
 }

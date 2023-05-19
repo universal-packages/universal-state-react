@@ -14,7 +14,7 @@ export function useFunctionSelector<S = any, V = any>(selector: (state: S) => V)
     state.on('*', setNewValue)
 
     return (): void => {
-      state.removeListener('*', setNewValue)
+      state.off('*', setNewValue)
     }
   }, [selector])
 

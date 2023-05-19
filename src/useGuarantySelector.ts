@@ -2,14 +2,16 @@ import React from 'react'
 import { State } from '@universal-packages/state'
 import { useUniversalState } from './useUniversalState'
 
-export function useSelector<V = any>(path: string | string[]): V {
+export function useGuarantySelector<V = any>(path: string | string[]): V {
   const state = useUniversalState()
   const [value, setValue] = React.useState<V>(state.get(path))
+  const [guaranty, setGuaranty] = React.useState(0)
 
   React.useEffect((): (() => void) => {
     const finalPath = State.getPath(path)
     const setNewValue = (newValue: V): void => {
       setValue(newValue)
+      setGuaranty(guaranty + 1)
     }
 
     state.on(finalPath, setNewValue)
