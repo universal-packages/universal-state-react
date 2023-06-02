@@ -1,5 +1,6 @@
-import { useContext } from 'react'
 import { State } from '@universal-packages/state'
+import { useContext } from 'react'
+
 import universalStateContext from './context'
 
 export function useUniversalState(): State {

@@ -1,6 +1,7 @@
 import { ToolSet } from '@universal-packages/state'
 import React from 'react'
-import { UniversalStateProvider, useMutate, useFunctionSelector, useSelector, useUniversalState, useGuarantySelector } from '../src'
+
+import { UniversalStateProvider, useFunctionSelector, useGuarantySelector, useMutate, useSelector, useUniversalState } from '../src'
 
 function GuarantyTest(): React.ReactElement {
   const value = useGuarantySelector('deep')

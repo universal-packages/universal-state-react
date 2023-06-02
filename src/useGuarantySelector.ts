@@ -1,5 +1,6 @@
-import React from 'react'
 import { State } from '@universal-packages/state'
+import React from 'react'
+
 import { useUniversalState } from './useUniversalState'
 
 export function useGuarantySelector<V = any>(path: string | string[]): V {

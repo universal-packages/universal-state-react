@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { useUniversalState } from './useUniversalState'
 
 export function useFunctionSelector<S = any, V = any>(selector: (state: S) => V): V {
