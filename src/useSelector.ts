@@ -7,7 +7,7 @@ export function useSelector<V = any>(path: string | string[]): V {
   const [value, setValue] = React.useState<V>(state.get(path))
 
   React.useEffect((): (() => void) => {
-    const finalPath = State.getPath(path)
+    const finalPath = State.resolvePath(path)
     const setNewValue = (newValue: V): void => {
       setValue(newValue)
     }

@@ -8,7 +8,7 @@ export function useGuarantySelector<V = any>(path: string | string[]): V {
   const [guaranty, setGuaranty] = React.useState(0)
 
   React.useEffect((): (() => void) => {
-    const finalPath = State.getPath(path)
+    const finalPath = State.resolvePath(path)
     const setNewValue = (newValue: V): void => {
       setValue(newValue)
       setGuaranty(guaranty + 1)
