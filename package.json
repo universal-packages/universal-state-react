@@ -16,7 +16,7 @@
     "update-dependents": "umaintenance update-dependents"
   },
   "dependencies": {
-    "@universal-packages/state": "^1.5.1"
+    "@universal-packages/state": "^1.6.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.4",
