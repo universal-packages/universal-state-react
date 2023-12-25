@@ -7,8 +7,8 @@ export function useFunctionSelector<S = any, V = any>(selector: (state: S) => V)
   const [value, setValue] = React.useState<V>(selector(state.get()))
 
   React.useEffect((): (() => void) => {
-    const setNewValue = ({ payload }): void => {
-      const newValue = selector(payload)
+    const setNewValue = (event: any): void => {
+      const newValue = selector(event.payload)
       setValue(newValue)
     }
 
